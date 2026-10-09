@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ambil Antrian | Rumah Sakit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-ambil">
+  <header class="topbar">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" width="36" height="36" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="29" height="29" rx="6" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M13 8h6v5h5v6h-5v5h-6v-5H8v-6h5z" fill="currentColor"/>
+      </svg>
+      <div>
+        <p class="brand-sub">Layanan mandiri</p>
+        <h1 class="brand-title">Ambil nomor antrian</h1>
+      </div>
+    </div>
+
+    <nav class="seg-nav" aria-label="Pindah halaman">
+      <a href="layar.html">Layar antrian</a>
+      <a href="ambil-antrian.html" class="is-active" aria-current="page">Ambil nomor</a>
+    </nav>
+  </header>
+
+  <main class="take">
+    <section class="step" aria-labelledby="step-priority">
+      <h2 id="step-priority" class="step-title"><span class="step-num">1</span>Pilih prioritas Anda</h2>
+      <div id="priority-group" class="priority-group" role="group" aria-labelledby="step-priority">
+        <button type="button" data-priority="normal" aria-pressed="true">
+          <span class="prio-name">Normal</span>
+          <span class="prio-hint">Pasien umum</span>
+        </button>
+        <button type="button" data-priority="lansia" aria-pressed="false">
+          <span class="prio-name">Lansia</span>
+          <span class="prio-hint">Usia 60 tahun ke atas</span>
+        </button>
+        <button type="button" data-priority="disabilitas" aria-pressed="false">
+          <span class="prio-name">Disabilitas</span>
+          <span class="prio-hint">Penyandang disabilitas</span>
+        </button>
+        <button type="button" data-priority="vip" aria-pressed="false">
+          <span class="prio-name">VIP</span>
+          <span class="prio-hint">Layanan khusus</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="step" aria-labelledby="step-service">
+      <h2 id="step-service" class="step-title"><span class="step-num">2</span>Pilih layanan</h2>
+      <div id="type-grid" class="type-grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="footbar">
+    <span id="updated">Memuat data...</span>
+    <span>Layanan baru muncul di halaman ini secara otomatis.</span>
+  </footer>
+
+  <dialog id="ticket-dialog" class="ticket-dialog" aria-labelledby="dlg-title">
+    <div class="ticket">
+      <p id="dlg-title" class="ticket-kicker">Nomor antrian Anda</p>
+      <p id="dlg-number" class="ticket-number">A-001</p>
+      <p id="dlg-service" class="ticket-service"></p>
+
+      <dl class="ticket-meta">
+        <div><dt>Prioritas</dt><dd id="dlg-priority"></dd></div>
+        <div><dt>Diambil pukul</dt><dd id="dlg-time"></dd></div>
+      </dl>
+
+      <p id="dlg-ahead" class="ticket-ahead"></p>
+      <p class="ticket-note">Perhatikan layar antrian. Nomor Anda dipanggil sesuai urutan prioritas.</p>
+
+      <form method="dialog">
+        <button class="btn btn-primary btn-block" autofocus>Tutup</button>
+      </form>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="assertive"></div>
+
+  <script src="dist/antrian-shared.js" defer></script>
+  <script src="dist/ambil-antrian.js" defer></script>
+</body>
+</html>

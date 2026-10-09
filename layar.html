@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Layar Antrian | Rumah Sakit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-layar">
+  <header class="topbar">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" width="36" height="36" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="29" height="29" rx="6" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M13 8h6v5h5v6h-5v5h-6v-5H8v-6h5z" fill="currentColor"/>
+      </svg>
+      <div>
+        <p class="brand-sub">Layar antrian</p>
+        <h1 class="brand-title">Nomor sedang dipanggil</h1>
+      </div>
+    </div>
+
+    <div class="topbar-actions">
+      <time id="clock" class="clock" aria-label="Jam saat ini">--.--.--</time>
+      <nav class="seg-nav" aria-label="Pindah halaman">
+        <a href="layar.html" class="is-active" aria-current="page">Layar antrian</a>
+        <a href="ambil-antrian.html">Ambil nomor</a>
+      </nav>
+      <button id="btn-sound" class="btn" type="button" aria-pressed="false">Suara mati</button>
+      <button id="btn-fullscreen" class="btn" type="button" aria-pressed="false">Layar penuh</button>
+    </div>
+  </header>
+
+  <main class="display">
+    <section id="spotlight" class="spotlight" aria-live="polite" aria-label="Panggilan terbaru">
+      <p class="spot-label">Panggilan terbaru</p>
+      <p id="spot-number" class="spot-number">-</p>
+      <p id="spot-service" class="spot-service">Belum ada nomor yang dipanggil</p>
+      <p id="spot-meta" class="spot-meta">Nomor akan muncul di sini setelah operator memanggil tiket.</p>
+    </section>
+
+    <section class="board-wrap" aria-labelledby="board-title">
+      <h2 id="board-title" class="section-title">Status tiap layanan</h2>
+      <ul id="board" class="board"></ul>
+    </section>
+  </main>
+
+  <footer class="footbar">
+    <span id="updated">Memuat data...</span>
+    <span>Data akan diperbarui otomatis setiap beberapa detik.</span>
+  </footer>
+
+  <script src="dist/antrian-shared.js" defer></script>
+  <script src="dist/layar.js" defer></script>
+</body>
+</html>
