@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ambil Antrian | Antrian Rumah Sakit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="dist/antrian-shared.js" defer></script>
+  <script src="dist/ambil-antrian.js" defer></script>
+</head>
+<body class="page-ambil">
+  <header class="app-header">
+    <a id="app-brand" class="app-brand" href="ambil-antrian.html"><svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><rect x="1.5" y="1.5" width="29" height="29" rx="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13 8h6v5h5v6h-5v5h-6v-5H8v-6h5z" fill="currentColor"/></svg><span>Antrian RS</span></a>
+    <nav class="app-nav" aria-label="Navigasi utama">
+      <a href="index.html" data-staff-only>Dashboard</a>
+      <a href="operator.html" data-staff-only>Operator</a>
+      <a href="ambil-antrian.html" class="is-active" aria-current="page">Ambil Nomor</a>
+      <a href="layar.html">Layar Antrian</a>
+    </nav>
+    <div class="app-user">
+      <span id="session-name" class="user-name">-</span>
+      <span id="session-role" class="role-tag">-</span>
+      <button id="btn-logout" class="btn btn-sm btn-on-dark" type="button">Keluar</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="page-head">
+      <div>
+        <h1 class="page-title">Ambil nomor antrian</h1>
+        <p class="page-sub">Pilih jenis layanan untuk mengambil nomor antrian.</p>
+      </div>
+      <div class="page-actions">
+        <button id="btn-fullscreen" class="btn" type="button" aria-pressed="false">Layar penuh</button>
+      </div>
+    </div>
+    <div id="type-grid" class="type-grid" aria-live="polite"></div>
+  </main>
+
+  <footer class="footbar">
+    <span id="updated">Memuat data...</span>
+    <span>Jenis antrian baru muncul otomatis tanpa memuat ulang halaman.</span>
+  </footer>
+
+  <dialog id="ticket-dialog" class="ticket-dialog" aria-labelledby="dlg-title">
+    <div class="ticket">
+      <p id="dlg-title" class="ticket-kicker">Nomor antrian Anda</p>
+      <p id="dlg-number" class="ticket-number">A-001</p>
+      <p id="dlg-service" class="ticket-service"></p>
+      <dl class="ticket-meta">
+        <div><dt>Prioritas</dt><dd id="dlg-priority"></dd></div>
+        <div><dt>Diambil pukul</dt><dd id="dlg-time"></dd></div>
+      </dl>
+      <p id="dlg-ahead" class="ticket-ahead"></p>
+      <p class="ticket-note">Perhatikan layar antrian. Nomor dipanggil sesuai urutan prioritas.</p>
+      <form method="dialog">
+        <button class="btn btn-primary btn-block" autofocus>Tutup</button>
+      </form>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="assertive"></div>
+</body>
+</html>

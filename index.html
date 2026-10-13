@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard Admin | Antrian Rumah Sakit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="dist/antrian-shared.js" defer></script>
+  <script src="dist/index.js" defer></script>
+</head>
+<body class="page-dashboard">
+  <header class="app-header">
+    <a id="app-brand" class="app-brand" href="ambil-antrian.html"><svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><rect x="1.5" y="1.5" width="29" height="29" rx="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13 8h6v5h5v6h-5v5h-6v-5H8v-6h5z" fill="currentColor"/></svg><span>Antrian RS</span></a>
+    <nav class="app-nav" aria-label="Navigasi utama">
+      <a href="index.html" data-staff-only class="is-active" aria-current="page">Dashboard</a>
+      <a href="operator.html" data-staff-only>Operator</a>
+      <a href="ambil-antrian.html">Ambil Nomor</a>
+      <a href="layar.html">Layar Antrian</a>
+    </nav>
+    <div class="app-user">
+      <span id="session-name" class="user-name">-</span>
+      <span id="session-role" class="role-tag">-</span>
+      <button id="btn-logout" class="btn btn-sm btn-on-dark" type="button">Keluar</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="page-head">
+      <div>
+        <h1 class="page-title">Dashboard Admin</h1>
+        <p class="page-sub">Reset setiap hari agar penomoran antrian mulai dari awal.</p>
+      </div>
+      <div class="page-actions">
+        <button id="resetQueueBtn" class="btn btn-danger" type="button">Reset Antrian</button>
+      </div>
+    </div>
+
+    <div class="dash-grid">
+      <section class="panel" aria-labelledby="types-title">
+        <h2 id="types-title" class="panel-title">Jenis antrian</h2>
+        <form id="addQueueTypeForm" class="form-row type-form" novalidate>
+          <div class="field">
+            <label for="queueCode">Kode</label>
+            <input id="queueCode" class="input" maxlength="1" placeholder="C" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="queueName">Nama layanan</label>
+            <input id="queueName" class="input" placeholder="Contoh: Farmasi" autocomplete="off">
+          </div>
+          <button type="submit" class="btn btn-primary">Tambah</button>
+        </form>
+        <p id="typeMessage" class="form-msg" role="status"></p>
+        <div id="queueTypeList" class="list"></div>
+      </section>
+
+      <section class="panel" aria-labelledby="tickets-title">
+        <h2 id="tickets-title" class="panel-title">Terbitkan tiket</h2>
+        <form id="issueTicketForm" class="form-row ticket-form">
+          <div class="field">
+            <label for="selectQueueType">Jenis antrian</label>
+            <select id="selectQueueType" class="select"></select>
+          </div>
+          <div class="field">
+            <label for="selectPriority">Prioritas</label>
+            <select id="selectPriority" class="select">
+              <option value="normal">Normal</option>
+              <option value="lansia">Lansia</option>
+              <option value="disabilitas">Disabilitas</option>
+              <option value="vip">VIP</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Terbitkan</button>
+        </form>
+        <p id="ticketMessage" class="form-msg" role="status"></p>
+        <div id="issuedTicketList" class="list"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footbar">
+    <span id="updated">Memuat data...</span>
+    <span>Data tersimpan di Local Storage dan tersinkron otomatis antar halaman.</span>
+  </footer>
+</body>
+</html>

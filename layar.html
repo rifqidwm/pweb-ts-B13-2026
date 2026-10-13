@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Layar Antrian | Antrian Rumah Sakit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="dist/antrian-shared.js" defer></script>
+  <script src="dist/layar.js" defer></script>
+</head>
+<body class="page-layar">
+  <header class="app-header">
+    <a id="app-brand" class="app-brand" href="ambil-antrian.html"><svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><rect x="1.5" y="1.5" width="29" height="29" rx="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13 8h6v5h5v6h-5v5h-6v-5H8v-6h5z" fill="currentColor"/></svg><span>Antrian RS</span></a>
+    <nav class="app-nav" aria-label="Navigasi utama">
+      <a href="index.html" data-staff-only>Dashboard</a>
+      <a href="operator.html" data-staff-only>Operator</a>
+      <a href="ambil-antrian.html">Ambil Nomor</a>
+      <a href="layar.html" class="is-active" aria-current="page">Layar Antrian</a>
+    </nav>
+    <div class="app-user">
+      <span id="session-name" class="user-name">-</span>
+      <span id="session-role" class="role-tag">-</span>
+      <button id="btn-logout" class="btn btn-sm btn-on-dark" type="button">Keluar</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="page-head">
+      <div>
+        <h1 class="page-title">Nomor sedang dipanggil</h1>
+        <p class="page-sub" id="updated">Memuat data...</p>
+      </div>
+      <div class="page-actions">
+        <time id="clock" class="clock" aria-label="Jam saat ini">--.--.--</time>
+        <button id="btn-sound" class="btn" type="button" aria-pressed="false">Nyalakan suara</button>
+        <button id="btn-fullscreen" class="btn" type="button" aria-pressed="false">Layar penuh</button>
+      </div>
+    </div>
+
+    <section id="spotlight" class="panel spotlight" aria-live="polite" aria-label="Panggilan terbaru">
+      <div class="spot-screen">
+        <p class="spot-label">Panggilan terbaru</p>
+        <p id="spot-number" class="spot-number">-</p>
+      </div>
+      <div class="spot-info">
+        <p id="spot-service" class="spot-service">Belum ada nomor yang dipanggil</p>
+        <p id="spot-meta" class="spot-meta">Nomor akan muncul di sini setelah operator memanggil tiket.</p>
+      </div>
+    </section>
+
+    <ul id="board" class="board" aria-label="Status tiap layanan"></ul>
+  </main>
+
+  <footer class="footbar">
+    <span>Data diperbarui otomatis setiap 2,5 detik tanpa memuat ulang halaman.</span>
+    <span>Nomor prioritas (VIP, Disabilitas, Lansia) dipanggil lebih dulu.</span>
+  </footer>
+</body>
+</html>

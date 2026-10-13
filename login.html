@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Masuk | Antrian Rumah Sakit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="dist/antrian-shared.js" defer></script>
+  <script src="dist/login.js" defer></script>
+</head>
+<body class="page-login">
+  <main class="login-shell">
+    <section class="login-aside">
+      <h1>Sistem antrian rumah sakit</h1>
+    </section>
+
+    <form id="loginForm" class="login-form" novalidate>
+      <span class="app-brand"><svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><rect x="1.5" y="1.5" width="29" height="29" rx="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13 8h6v5h5v6h-5v5h-6v-5H8v-6h5z" fill="currentColor"/></svg><span>Antrian RS</span></span>
+      <div>
+        <h2>Masuk</h2>
+        <p class="login-hint">Gunakan akun uji dari <a href="https://dummyjson.com/users" target="_blank" rel="noopener">dummyjson.com/users</a>.</p>
+      </div>
+      <div id="infoAlert" class="alert alert-info" role="status"></div>
+      <div class="field">
+        <label for="username">Username</label>
+        <input id="username" class="input" name="username" placeholder="contoh: emilys" required autocomplete="username">
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" class="input" type="password" name="password" placeholder="Password" required autocomplete="current-password">
+      </div>
+      <div id="errorAlert" class="alert alert-error" role="alert"></div>
+      <button type="submit" id="submitBtn" class="btn btn-primary btn-block">Masuk</button>
+    </form>
+  </main>
+</body>
+</html>

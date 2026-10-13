@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice">
+  <rect width="600" height="800" fill="#a35a55"/>
+  <circle cx="470" cy="150" r="70" fill="#fdf0cd" opacity=".35"/>
+  <!-- gedung belakang -->
+  <rect x="40" y="300" width="160" height="420" fill="#8d4643"/>
+  <rect x="400" y="260" width="170" height="460" fill="#8d4643"/>
+  <!-- gedung utama -->
+  <rect x="150" y="200" width="300" height="520" fill="#f3e6e3"/>
+  <rect x="150" y="200" width="300" height="34" fill="#e2cfcb"/>
+  <!-- tanda plus -->
+  <rect x="260" y="250" width="80" height="80" rx="12" fill="#851c1d"/>
+  <path d="M290 262h20v18h18v20h-18v18h-20v-18h-18v-20h18z" fill="#fff"/>
+  <!-- jendela -->
+  <g fill="#cde4fe">
+    <rect x="180" y="360" width="50" height="40" rx="4"/><rect x="275" y="360" width="50" height="40" rx="4"/><rect x="370" y="360" width="50" height="40" rx="4"/>
+    <rect x="180" y="430" width="50" height="40" rx="4"/><rect x="275" y="430" width="50" height="40" rx="4"/><rect x="370" y="430" width="50" height="40" rx="4"/>
+    <rect x="180" y="500" width="50" height="40" rx="4"/><rect x="275" y="500" width="50" height="40" rx="4"/><rect x="370" y="500" width="50" height="40" rx="4"/>
+  </g>
+  <g fill="#b9786f">
+    <rect x="65" y="340" width="30" height="26"/><rect x="125" y="340" width="30" height="26"/>
+    <rect x="65" y="400" width="30" height="26"/><rect x="125" y="400" width="30" height="26"/>
+    <rect x="65" y="460" width="30" height="26"/><rect x="125" y="460" width="30" height="26"/>
+    <rect x="430" y="300" width="30" height="26"/><rect x="500" y="300" width="30" height="26"/>
+    <rect x="430" y="360" width="30" height="26"/><rect x="500" y="360" width="30" height="26"/>
+    <rect x="430" y="420" width="30" height="26"/><rect x="500" y="420" width="30" height="26"/>
+  </g>
+  <!-- pintu -->
+  <rect x="255" y="600" width="90" height="120" fill="#851c1d"/>
+  <rect x="230" y="585" width="140" height="18" fill="#e2cfcb"/>
+  <rect x="0" y="720" width="600" height="80" fill="#6c1617"/>
+</svg>
